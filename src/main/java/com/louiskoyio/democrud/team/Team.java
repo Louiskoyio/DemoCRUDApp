@@ -1,7 +1,10 @@
-package com.louiskoyio.democrud.models;
+package com.louiskoyio.democrud.team;
 
+
+import com.louiskoyio.democrud.player.Player;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,21 +16,25 @@ public class Team {
     private String teamName;
     private int teamCaptain;
 
+  /*  @OneToMany(targetEntity = Player.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "team_player_fk", referencedColumnName = "id")*/
+
+
     public Team() {
     }
 
-    public Team(int teamId, String teamName, int teamCaptain) {
-        this.id = teamId;
+    public Team(int id, String teamName, int teamCaptain) {
+        this.id = id;
         this.teamName = teamName;
         this.teamCaptain = teamCaptain;
     }
 
-    public int getTeamId() {
+    public int getId() {
         return id;
     }
 
-    public Team setTeamId(int teamId) {
-        this.id = teamId;
+    public Team setId(int id) {
+        this.id = id;
         return this;
     }
 

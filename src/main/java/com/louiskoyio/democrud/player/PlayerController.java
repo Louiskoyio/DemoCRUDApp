@@ -1,5 +1,7 @@
 package com.louiskoyio.democrud.player;
 
+import com.louiskoyio.democrud.team.Team;
+import com.louiskoyio.democrud.team.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +15,14 @@ import java.util.List;
 @Controller
 public class PlayerController {
     @Autowired private PlayerService service;
+    @Autowired private TeamService serviceTeam;
 
     @GetMapping("/players")
     public String showPlayersList(Model model){
         List<Player> playerList = service.listAll();
+        List<Team> teamList = serviceTeam.listAll();
         model.addAttribute("playerList",playerList);
+        model.addAttribute("teamList",teamList);
 
         return "players";
     }

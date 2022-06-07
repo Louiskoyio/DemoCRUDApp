@@ -1,5 +1,6 @@
 package com.louiskoyio.democrud.player;
 
+import com.louiskoyio.democrud.team.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,6 @@ public class PlayerService {
     public List<Player> listAll(){
         return (List<Player>) playerRepository.findAll();
     }
-
 
     public void save(Player player) {
         playerRepository.save(player);

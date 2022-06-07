@@ -20,11 +20,6 @@ public class MainController {
         return "register";
     }
 
-    @GetMapping("/teams")
-    public String showTeams(Model model){
-        model.addAttribute("teams", playerRepository.findAll());
-        return "teams";
-    }
     @GetMapping("/fixtures")
     public String showFixtures(){
         return "fixtures";

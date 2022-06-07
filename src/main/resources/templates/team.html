@@ -7,7 +7,7 @@
     <title>APL | Teams</title>
 </head>
 <body>
-<div class="container-fluid text-left col-sm-12" style="max-width: 800px;">
+<div class="container-fluid text-left col-sm-12" style="max-width: 800px; ">
     <div class="custom-nav">
         <a style="text-decoration: none;" class="badge bg-secondary" th:href="@{/}"><i class="bi bi-house-fill"></i> Home</a>
         <a style="text-decoration: none;" class="badge bg-warning activeTab" th:href="@{/teams}"><i class="bi bi-people-fill"></i> Teams</a>
@@ -16,40 +16,45 @@
         <a style="text-decoration: none;" class="badge bg-secondary" href=""><i class="bi bi-file-bar-graph-fill"></i> Statistics</a>
     </div>
     <div>
-        <h3><i class="bi bi-people-fill"></i> Teams
-            <a class="badge bg-success" style="text-decoration: none; margin-bottom: 8px; margin-top: 8px;" th:href="@{/players/new}">Register New Team</a>
-        </h3>
+        <h3><i class="bi bi-people-fill"></i> Teams</h3>
     </div>
 
-    <div th:if="${message}" class="alert-success text-center">
-        [[${message}]]
-    </div>
-    <div>
-
-        <table class="table table-bordered table-dark">
-            <thead class="table-light">
-            <tr>
-                <th>Team Name</th>
-                <th>Captain</th>
-            </tr>
-            </thead>
-            <tbody>
-            <th:block th:each="team : ${teamList}">
+    <div class="card text-left" style="flex-direction: row;">
+        <div class="card-title" style="padding: 8px;" th:object="${team}">
+            <h5>[[${team.teamName}]]<br>
+                <i style="color: gray; font-size: medium;">Captain: [[${team.teamCaptain}]] </i>
+            </h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-dark" >
+                <thead class="table-light">
                 <tr>
-                    <td>[[${team.teamName}]]</td>
-                    <td>[[${team.teamCaptain}]]</td>
-                    <td>
-                        <a style="text-decoration: none;" class="badge bg-primary" th:href="@{'/teams/view/' + ${team.id}}">View</a>
-                        <a style="text-decoration: none;" class="badge bg-primary" th:href="@{'/teams/edit/' + ${team.id}}">Edit</a>
-                        <a style="text-decoration: none;" class="badge bg-danger" th:href="@{'/teams/delete/' + ${team.id}}">Delete</a>
-
-                    </td>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Games Played</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
                 </tr>
-            </th:block>
+                </thead>
+                <tbody>
+                <th:block th:each="player : ${players}">
+                    <tr>
+                        <td>[[${player.fname}]]</td>
+                        <td>[[${player.lname}]]</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>
+                            <a style="text-decoration: none;" class="badge bg-primary" th:href="@{'/players/view/' + ${player.id}}">View</a>
+                        </td>
+                    </tr>
+                </th:block>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
+
+        </div>
     </div>
 
 </div>

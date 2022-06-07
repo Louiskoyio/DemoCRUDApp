@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <meta charset="UTF-8">
+    <title>[[${playerName}]]</title>
+</head>
+<body>
+<div class="container-fluid text-center">
+
+    <div class="card text-left col-sm-4">
+        <div class="card-header">
+            <h3>[[${playerName}]]</h3>
+        </div>
+        <div class="card-body" th:object="${player}">
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        <b>National ID</b>
+                    </td>
+                    <td>
+                        [[${player.nationalId}]]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Phone Number</b>
+                    </td>
+                    <td>
+                        [[${player.phoneNumber}]]
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Team ID</b>
+                    </td>
+                    <td>
+                        [[${player.teamId}]]
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

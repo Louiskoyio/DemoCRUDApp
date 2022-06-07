@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <meta charset="UTF-8">
+    <title>APL | Register Player</title>
+</head>
+<body>
+
+<div>
+<a href="/"> Back to home </a>
+<br>
+<h4>[[${pageTitle}]]</h4>
+</div>
+
+<form th:action="@{/players/save}" method="post" th:object="${player}" style="max-width: 500px;margin: 0 auto; padding: 4px; ">
+    <div class="border">
+        <input type="hidden" th:field="*{id}">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="team"><b>Select Team:</b></label><br>
+            <div class="col-sm-8">
+            <select id="team" name="team" th:field="*{teamId}" class="form-control" required>
+                <option value="1">Mangunga FC</option>
+                <option value="2">Pau FC</option>
+                <option value="3">YB FC</option>
+                <option value="4">Bayer Neverlosen</option>
+            </select><br>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="fname"><b>First name:</b></label><br>
+            <div class="col-sm-8">
+            <input th:field="*{fname}" class="form-control" type="text" id="fname" name="fname" required >
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="lname"><b>Last name:</b></label><br>
+            <div class="col-sm-8">
+                <input th:field="*{lname}" class="form-control" type="text" id="lname" name="lname">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="phone"><b>Phone Number:</b></label><br>
+            <div class="col-sm-8">
+                <input th:field="*{phoneNumber}" class="form-control" type="number" id="phone" name="phone" value="0708003398"><br>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="nationalID"><b>National ID:</b></label><br>
+            <div class="col-sm-8">
+                <input th:field="*{nationalId}" class="form-control" type="number" id="nationalID" name="nationalID" required><br>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label" for="password"><b>Password:</b></label><br>
+            <div class="col-sm-8">
+                <input th:field="*{password}" class="form-control" type="password" id="password" name="password" required minlength="8"><br>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary m-2">REGISTER</button>
+            <button  class="btn btn-secondary m-2" onclick="cancelForm()">CANCEL</button>
+        </div>
+
+    </div>
+</form>
+<script type="application/javascript">
+    function cancelForm(){
+        window.location="[[@{/players}]]"
+    }
+</script>
+</body>
+</html>

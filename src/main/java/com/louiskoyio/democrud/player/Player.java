@@ -19,7 +19,6 @@ public class Player {
     private String fname;
     private String lname;
 
-
     @JoinColumn(name = "teamId", referencedColumnName = "id")
     private int teamId;
 

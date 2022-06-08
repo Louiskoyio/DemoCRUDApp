@@ -11,8 +11,8 @@ public class DemoCrudApplication {
         SpringApplication.run(DemoCrudApplication.class, args);
     }
 
-    @SpringBootApplication
+    /*@SpringBootApplication
     public class SpringBootTomcatApplication extends SpringBootServletInitializer {
-    }
+    }*/
 
 }

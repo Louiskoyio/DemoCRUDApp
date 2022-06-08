@@ -29,11 +29,11 @@ public class Team {
         this.teamCaptain = teamCaptain;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public Team setId(int id) {
+    public Team setId(Integer id) {
         this.id = id;
         return this;
     }

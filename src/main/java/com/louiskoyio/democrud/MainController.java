@@ -20,8 +20,4 @@ public class MainController {
         return "register";
     }
 
-    @GetMapping("/fixtures")
-    public String showFixtures(){
-        return "fixtures";
-    }
 }

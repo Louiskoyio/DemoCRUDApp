@@ -1,4 +1,4 @@
-package com.louiskoyio.democrud.models;
+package com.louiskoyio.democrud.goal;
 
 import javax.persistence.*;
 

@@ -12,13 +12,14 @@
         <a style="text-decoration: none;" class="badge bg-secondary" th:href="@{/}"><i class="bi bi-house-fill"></i> Home</a>
         <a style="text-decoration: none;" class="badge bg-secondary" th:href="@{/teams}"><i class="bi bi-people-fill"></i> Teams</a>
         <a style="text-decoration: none;" class="badge bg-warning activeTab" th:href="@{/players}"><i class="bi bi-people"></i> Players</a>
-        <a style="text-decoration: none;" class="badge bg-secondary" href=""><i class="bi bi-calendar-event-fill"></i> Fixtures & Results</a>
+        <a style="text-decoration: none;" class="badge bg-secondary" th:href="@{/fixtures}"><i class="bi bi-calendar-event-fill"></i> Fixtures & Results</a>
         <a style="text-decoration: none;" class="badge bg-secondary" href=""><i class="bi bi-file-bar-graph-fill"></i> Statistics</a>
     </div>
-    <div>
+    <div style="margin-bottom: 10px;">
         <h3><i class="bi bi-people"></i> Players
-            <a class="badge bg-success" style="text-decoration: none; margin-bottom: 8px; margin-top: 8px;" th:href="@{/players/new}">Register New Player</a>
+            <a class="badge bg-success" style="text-decoration: none; font-size: medium;" th:href="@{/players/new}">Register New Player</a>
         </h3>
+        <a th:href="@{/}" style="color: black;text-decoration: none;"><i class="bi bi-arrow-left"></i> Back to Home</a>
     </div>
 
     <div th:if="${message}" class="alert-success text-center">
@@ -26,7 +27,7 @@
     </div>
     <div>
 
-        <table class="table table-bordered table-dark" >
+        <table class="table table-bordered table-dark rounded" >
             <thead class="table-light">
             <tr>
                 <th>First Name</th>

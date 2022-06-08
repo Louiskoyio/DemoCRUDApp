@@ -1,4 +1,4 @@
-package com.louiskoyio.democrud.models;
+package com.louiskoyio.democrud.fixture;
 
 import javax.persistence.*;
 
@@ -16,7 +16,7 @@ public class Fixture {
     private boolean played;
     private int team1Goals;
     private int team2Goals;
-    private int editionNumber;
+    private int editionnumber;
 
     public Fixture() {
     }
@@ -28,7 +28,7 @@ public class Fixture {
         this.played = played;
         this.team1Goals = team1Goals;
         this.team2Goals = team2Goals;
-        this.editionNumber = editionNumber;
+        this.editionnumber = editionNumber;
     }
 
     public int getFixtureId() {
@@ -87,11 +87,11 @@ public class Fixture {
         this.team2Goals = team2Goals;
     }
 
-    public int getEditionNumber() {
-        return editionNumber;
+    public int getEditionnumber() {
+        return editionnumber;
     }
 
-    public void setEditionNumber(int editionNumber) {
-        this.editionNumber = editionNumber;
+    public void setEditionnumber(int editionnumber) {
+        this.editionnumber = editionnumber;
     }
 }
